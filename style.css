@@ -215,6 +215,7 @@ img {
     gap: 0.3rem;
     flex: 1;
     padding: 1rem 0;
+    justify-content: center;
 }
 
 .announcement > div:not(:last-child) {
