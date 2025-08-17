@@ -1,3 +1,10 @@
+:root {
+    --lightpink:#FFB6C1;;
+    --hotpink: #ff9392;
+    --white: #fefffe;
+    --lightgrey: #edf0f6;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,6 +13,26 @@
 
 body {
     font-family: Helvetica, sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+svg {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+img {
+    height: 50px;
+    width: auto;
+    cursor: pointer;
 }
 
 .container {
@@ -21,7 +48,15 @@ body {
     grid-template-rows: 1fr 1fr;
     grid-column: 2/3;
     align-items: center;
-    padding: 0 1rem;
+    padding: 0 2rem;
+}
+
+.header > div {
+    padding: 1rem 0;
+}
+
+.header img {
+    border-radius: 50%;
 }
 
 .top {
@@ -30,14 +65,16 @@ body {
 }
 
 .top .left {
-    display: grid;
-    grid-template-columns: 100px 1fr;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
 }
 
 .top .right {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr) 3fr;
-    justify-self: right;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 1.5rem;
 }
 
 #search {
@@ -46,33 +83,41 @@ body {
     border-radius: 1rem;
     border: solid 1px black;
     padding: 0 1rem;
+    background-color: var(--lightgrey);
 }
 
 .bottom {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.bottom img {
+    height: 60px;
+    width: auto;
 }
 
 .bottom .left {
-    display: grid;
-    grid-template-columns: 100px 1fr;
-    justify-self: start;
-    /* gap: 1rem; */
-}
-
-.bottom .left > div {
-    grid-column: 1/2;
-}
-
-.bottom .left > h2 {
-    grid-column: 2/3;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-right: 3rem;
 }
 
 .bottom .right {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-self: end;
-    gap: 3em;
+    gap: 2em;
+}
+
+.bottom button {
+    font: inherit;
+    background-color: var(--hotpink);
+    border-radius: 50px;
+    padding: 0.4rem 1.5rem;
+    cursor: pointer;
+    border: none;
 }
 
 .main {
@@ -82,8 +127,14 @@ body {
     grid-template-columns: 4fr 1fr;
     grid-template-rows: 1fr 1fr;
     padding: 1rem;
-    background-color: lightgray;
     gap: 1rem;
+    background-color: var(--lightgrey);
+}
+
+.main h3,
+.main h5 {
+    font-size: 1.3rem;
+    margin-left: 1rem;
 }
 
 .card-container {
@@ -101,15 +152,19 @@ body {
     grid-row: 2/3;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    /* grid-auto-rows: minmax(200px, 1fr); */
     gap: 0.5rem;
+}
+
+.all-cards h4 {
+    
 }
 
 .card {
     display: grid;
     grid-template-rows: 20px minmax(3fr, 200px) 1fr;
-    background-color: lightblue;
+    background-color: var(--lightpink);
     border-radius: 2rem;
+    padding: 1rem;
 }
 
 .announcements-container {
@@ -128,7 +183,9 @@ body {
 }
 
 .announcement {
-    background-color: white;
+    background-color: var(--lightpink);
+    border-radius: 2rem;
+    padding: 1rem;
 }
 
 .trending-container {
@@ -147,27 +204,57 @@ body {
 }
 
 .trending {
-    background-color: white;
+    background-color: var(--lightpink);
+    border-radius: 2rem;
+    padding: 1rem;
 }
 
 .dashboard {
     border-right: solid black 1px;
     grid-row: 1/3;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    background-color: var(--hotpink);
+    padding: 1rem 1.5rem;
+}
+
+.dashboard-header {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.dashboard svg {
+    fill: white;
+}
+
+.dashboard h1 {
+    color: var(--white);
+}
+
+.dashboard li a {
+    color: var(--white)
+}
+
+.dashboard li a:hover {
+    text-decoration: underline;
+}
+
+.dashboard ul {
     display: flex;
     flex-direction: column;
+    gap: 1rem;
+}
+
+.dashboard > ul:first-of-type {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.dashboard ul > div {
+    display: flex;
     align-items: center;
+    gap: 1rem;
 }
 
-.dash-container {
-    display: grid;
-    gap: 4em;
-}
-
-.dash-container:first-child {
-    margin-top: 3em;
-}
-
-.dash-container ul {
-    display: grid;
-    gap: 10px;
-}
