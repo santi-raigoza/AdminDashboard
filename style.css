@@ -38,7 +38,6 @@ img {
 .container {
     display: grid;
     grid-template-columns: 1fr 5fr;
-    grid-template-rows: 1fr 4fr;   
     min-height: 100vh;
 }
 
@@ -155,16 +154,32 @@ img {
     gap: 0.5rem;
 }
 
-.all-cards h4 {
-    
-}
-
 .card {
     display: grid;
     grid-template-rows: 20px minmax(3fr, 200px) 1fr;
     background-color: var(--lightpink);
     border-radius: 2rem;
     padding: 1rem;
+}
+
+.card h4 {
+    align-self: end;
+    margin-left: 1rem;
+    font-size: 1.5rem;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 2rem;
+    margin: 0.5rem 0;
+}
+
+.card div {
+    display: flex;
+    justify-content: end;
+    gap: 0.75rem;
+    margin-right: 1rem;
 }
 
 .announcements-container {
@@ -185,7 +200,25 @@ img {
 .announcement {
     background-color: var(--lightpink);
     border-radius: 2rem;
-    padding: 1rem;
+    padding: 0.3rem 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.announcement h6 {
+    font-size: 1rem;
+}
+
+.announcement > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    flex: 1;
+    padding: 1rem 0;
+}
+
+.announcement > div:not(:last-child) {
+    border-bottom: solid 1px var(--white);
 }
 
 .trending-container {
@@ -226,7 +259,7 @@ img {
 }
 
 .dashboard svg {
-    fill: white;
+    fill: var(--white);
 }
 
 .dashboard h1 {
